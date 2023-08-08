@@ -1,34 +1,65 @@
+<<<<<<< Updated upstream
 body {
   width: auto;
   min-height: 100vh;
   background: linear-gradient(294deg, #19151A 40%, #292929 90%);
   overflow-x: hidden;
+=======
+@font-face {
+  font-family: "Montserrat";
+  src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf) format("truetype");
+>>>>>>> Stashed changes
 }
-body .rectContainerBG {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
+@font-face {
+  font-family: "Monument Extended";
+  src: url(/assets/fonts/MonumentExtended-Regular.otf) format("opentype"), url(/assets/fonts/MonumentExtended-Ultrabold.otf) format("opentype");
+}
+@font-face {
+  font-family: "Futura";
+  src: url(/assets/fonts/FuturaHeavyFont.ttf) format("truetype");
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url(/assets/fonts/OpenSans-VariableFont_wdth_wght.ttf) format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+* a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  width: 200vw;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  transition: transform 150ms ease;
 }
 body nav {
   position: fixed;
+<<<<<<< Updated upstream
   top: 1rem;
   left: 1rem;
   right: 1rem;
-  z-index: 10;
-  padding: 1rem 2rem 1rem 2rem;
-  display: flex;
-  flex-direction: row;
+=======
+  height: 5rem;
+  width: 100vw;
+  padding: 0 5rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  border-radius: 0.15rem;
-  border: 0.1px solid transparent;
-  transition: border 150ms ease-in-out, -webkit-backdrop-filter 500ms ease;
-  transition: border 150ms ease-in-out, backdrop-filter 500ms ease;
-  transition: border 150ms ease-in-out, backdrop-filter 500ms ease, -webkit-backdrop-filter 500ms ease;
+  justify-items: center;
+  outline: 1px solid #FDFDFF;
+  transition: transform 150ms ease;
+>>>>>>> Stashed changes
+  z-index: 10;
 }
+<<<<<<< Updated upstream
 body nav .logoGroup {
   width: 11rem;
   position: relative;
@@ -246,16 +277,318 @@ body nav .navMenu .btn:hover {
 
 .textHeroP {
   font-family: Open Sans;
+=======
+body nav a {
+  font-family: Montserrat;
+>>>>>>> Stashed changes
   font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #131115;
+}
+body nav a img {
+  width: 3rem;
+}
+body nav a div {
+  background-color: #FDFDFF;
+  padding: 1rem 1.5rem;
+  border-radius: 10rem;
+  color: #F28500;
+}
+body nav a div + i {
+  opacity: 0;
+}
+body nav a div.enableClose {
+  opacity: 0;
+}
+body nav a div.enableClose + i {
+  opacity: 1;
+}
+body .page1 {
+  position: relative;
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  top: 5rem;
+  padding: 4rem 0;
+}
+body .page1 .bgText {
+  position: absolute;
+  left: 45%;
+  top: -8rem;
+  background-size: cover;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+body .page1 .heroText {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1/3;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body .page1 .heroText h1 {
+  font-family: Monument Extended;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: 0.3rem;
+  width: 25%;
+  color: #131115;
+}
+body .page1 .heroText p {
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #363438;
+}
+body .page1 .heroImg {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1/3;
+  left: 0;
+  min-width: 0;
+  min-height: 0;
+  padding: 2rem;
+}
+body .page1 .heroImg img {
+  border-radius: 10px;
+}
+body .page1 .getStartedButton {
+  width: 12rem;
+  height: 12rem;
+  position: relative;
+  justify-self: center;
+  margin: 2rem;
+  grid-row: 2;
+  grid-column: 1/3;
+  background-color: #FDFDFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .page1 .getStartedButton a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+body .page1 .getStartedButton a h1 {
+  font-family: Monument Extended;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  text-align: center;
+  color: #F28500;
+}
+body .page1 .getStartedButton a img {
+  width: 2.25rem;
+}
+body .page2 {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+body .page2 img {
+  grid-column: 1/2;
+  grid-row: 1/4;
+  padding: 1rem 5rem;
+}
+body .page2 .info {
+  grid-column: 2/3;
+  padding-right: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body .page2 .info h1 {
+  font-family: Monument Extended;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  color: #131115;
+}
+body .page2 .info p {
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #363438;
+}
+body .page3 {
+  width: 50%;
+  padding: 0 5rem;
+  margin: 3rem 0;
+}
+body .page3 .tryService {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  padding: 5rem 5rem;
+  background-color: #FDFDFF;
+  border-radius: 10px;
+}
+body .page3 .tryService .tryServiceText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  grid-column: 1/3;
+}
+body .page3 .tryService .tryServiceText h1 {
+  font-family: Monument Extended;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: 0.3rem;
+  color: #131115;
+}
+body .page3 .tryService .tryServiceText p {
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #363438;
+}
+body .page3 .tryService .tryServiceBtn {
+  grid-column: 3/4;
+}
+body .page3 .tryService .tryServiceBtn div {
+  display: flex;
+  gap: 0.8rem;
+  background-color: #F28500;
+  padding: 1.5rem 2rem;
+  border-radius: 10rem;
+  font-family: Monument Extended;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  color: #FDFDFF;
+}
+body .page3 .tryService .tryServiceBtn div img {
+  width: 2rem;
+}
+body footer {
+  width: 50%;
+  padding: 1rem 5rem;
+}
+body footer .footerContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3rem 0;
+  border-top: 1px solid #131115;
+  border-bottom: 1px solid #131115;
+}
+body footer .footerContainer .footerLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+body footer .footerContainer .footerLeft img {
+  width: 10rem;
+}
+body footer .footerContainer .footerLeft h1 {
+  font-family: Futura Hv BT;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  letter-spacing: 0.225rem;
+}
+body footer .footerContainer .footerRight {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7rem;
+  padding: 2rem;
+}
+body footer .footerContainer .footerRight ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+body footer .footerContainer .footerRight ul li {
+  list-style: none;
+}
+body footer .footerContainer .footerRight ul li a {
+  font-family: Montserrat;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #363438;
+}
+body footer .footerContainer .footerRight ul li a:hover {
+  color: #131115;
+}
+body footer .footerContainer .backToTopBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 5rem;
+  height: 5rem;
+  background-color: #FDFDFF;
+  margin: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+body footer .footerContainer .backToTopBtn img {
+  width: 2rem;
+}
+body footer .footerBottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+body footer .footerBottom .copyrightInfo {
+  font-family: OpenSans;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #363438;
+}
+body footer .footerBottom .links {
+  display: flex;
+  gap: 3rem;
+}
+body footer .footerBottom .links a i {
+  font-size: 1.25rem;
+  color: #363438;
 }
 
-.navOnScroll {
-  border: 0.1px solid rgba(255, 255, 255, 0.1254901961);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+.backgroundGradient {
+  background: url(/assets/images/Gradient01_repeat.png);
+  background-size: 200%;
+  background-repeat: repeat;
 }
 
 .linkWithUnderline {
@@ -266,7 +599,7 @@ body nav .navMenu .btn:hover {
   display: block;
   width: 100%;
   height: 0.05rem;
-  background-color: #F9F9F9;
+  background-color: #131115;
   -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
   transition: all 0.2s ease-in-out;
@@ -274,4 +607,8 @@ body nav .navMenu .btn:hover {
 .linkWithUnderline:hover span {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.buttonShadow {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 }/*# sourceMappingURL=style.css.map */
