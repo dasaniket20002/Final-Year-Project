@@ -1,28 +1,3 @@
-<<<<<<< Updated upstream
-$bg-gradient: linear-gradient(294deg, #19151A 40%, #292929 90%);
-$col-accent: #fefefe30;
-$col-transparent: #ffffff00;
-$col-primary: #FF471F;
-$col-text: #F9F9F9;
-$col-text-dim: rgba(121, 121, 121, 0.50);
-$col-bg: #19151A;
-
-body {
-    width: auto;
-    min-height: 100vh;
-
-    background: $bg-gradient;
-
-    overflow-x: hidden;
-
-    .rectContainerBG {
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-        right: 1rem;
-        bottom: 1rem;
-    }
-=======
 $col_accent: #F28500;
 $col_primary: #FDFDFF;
 $col_text: #131115;
@@ -67,16 +42,10 @@ body {
 
     overflow-x: hidden;
     transition: transform 150ms ease;
->>>>>>> Stashed changes
 
     nav {
         position: fixed;
 
-<<<<<<< Updated upstream
-        top: 1rem;
-        left: 1rem;
-        right: 1rem;
-=======
         height: 5rem;
         width: 100vw;
         padding: 0 5rem;
@@ -89,7 +58,6 @@ body {
 
         outline: 1px solid $col_primary;
         transition: transform 150ms ease;
->>>>>>> Stashed changes
 
         z-index: 10;
 
@@ -488,209 +456,10 @@ body {
     }
 }
 
-<<<<<<< Updated upstream
-.pageContainer {
-    position: relative;
-    top: 3rem;
-    padding: 10rem 3rem;
-    
-    .p1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr 0.2fr;
-
-        align-items: center;
-
-        .heroText {
-            grid-column: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-
-            h1 {
-                color: $col-primary;
-            }
-            .textContainer {
-                display: grid;
-                p {
-                    grid-area: 1/1;
-                    opacity: 0;
-                    transform: scaleY(0%);
-                    transition: opacity 250ms ease-in-out, transform 150ms ease-in-out;
-                }
-                p.active {
-                    color: $col-text;
-                    opacity: 1;
-                    transform: scaleY(100%);
-                    transition: opacity 550ms ease-in-out, transform 150ms ease-in-out;
-                }
-            }
-            .exploreSection {
-                width: fit-content;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
-
-                align-items: center;
-                a {
-                    grid-column: 1/3;
-                    grid-row: 1/3;
-                    color: $col-primary;
-                }
-                img:nth-child(1) {
-                    grid-column: 1/3;
-                    grid-row: 1/3;
-                    width: 6rem;
-                }
-                img:nth-child(2) {
-                    grid-column: 1/2;
-                    grid-row: 2/3;
-                    width: 3rem;
-                }
-            }
-        }
-        .heroElement {
-            grid-column: 2;
-
-            display: grid;
-            grid-template-rows: 1fr;
-            grid-template-columns: 1fr;
-            
-            justify-items: center;
-            align-items: baseline;
-            img {
-                display: none;
-            }
-            img.stationary {
-                display: block;
-                padding: 1rem;
-                grid-area: 1/1;
-                width: 30rem;
-                position: relative;
-                color: $col-bg;
-
-                justify-content: center;
-            }
-            img.active {
-                display: block;
-                padding: 1rem;
-                grid-area: 1/1;
-                height: 31rem;
-                position: relative;
-                color: $col-bg;
-
-                justify-content: center;
-            }
-        }
-        .heroScroll {
-            grid-column: 3;
-            position: relative;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            gap: 7rem;
-
-            .line1 {
-                position: absolute;
-                height: 20rem;
-                border: 1px solid $col-accent;
-            }
-
-            .scrollNum {
-                color: $col-text-dim;
-                width: 1rem;
-                height: 1rem;
-
-                padding: 0.5rem;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                background: $col-bg;
-
-                p{
-                    font-family: Julius Sans One;
-                    font-size: .75rem;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: normal;
-
-                    margin: 0;
-                }
-
-                
-                border-radius: 50%;
-                outline: 10px solid $col-bg;
-                border: 1px solid $col-text-dim;
-
-                z-index: 1;
-
-                transition: color 250ms ease-in-out, border 500ms ease-in-out;
-            }
-            .scrollNum.active {
-                color: $col-text;
-                border: 1px solid $col-text;
-            }
-        }
-    }
-}
-
-.boundingBoxDepth {
-    box-shadow: 0px 0px 10px 1px #ffffff85;
-    border-radius: 0.25rem;
-    border: 0.1px solid $col-accent;
-    background: $col-transparent;
-}
-.colPrimaryDropShadow {
-    box-shadow: 0px 0px 10px 0px $col-primary;
-}
-.colPrimaryDropShadowTxt {
-    text-shadow: 0px 0px 10px $col-primary;
-}
-
-.textLogo {
-    font-family: Kelly Slab;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-.textNav {
-    font-family: Sen;
-    font-size: 1.2rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-.textHeroH1 {
-    font-family: Radio Canada;
-    font-size: 2.5rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.5rem;
-    text-transform: uppercase;
-}
-.textHeroP {
-    font-family: Open Sans;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.navOnScroll {
-    border: 0.1px solid #ffffff20;
-
-    backdrop-filter: blur(5px);
-=======
 .backgroundGradient {
     background: url(/assets/images/Gradient01_repeat.png);
     background-size: 200%;
     background-repeat: repeat;
->>>>>>> Stashed changes
 }
 
 .linkWithUnderline {
@@ -712,9 +481,6 @@ body {
 	}
 }
 
-<<<<<<< Updated upstream
-=======
 .buttonShadow {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 }
->>>>>>> Stashed changes

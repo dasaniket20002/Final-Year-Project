@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-//NAV BAR Scroll
-let navBar = document.getElementById("navBar");
-=======
->>>>>>> Stashed changes
 
 //  NAV BAR BLUR BG 
 
@@ -17,25 +12,6 @@ window.onscroll = function() {
   }
 }
 
-<<<<<<< Updated upstream
-//HERO Img Scroll
-let scrollImgs = document.querySelectorAll(".scrollImg");
-let scrollNums = document.querySelectorAll(".scrollNum");
-let scrollTxts = document.querySelectorAll(".scrollTxt");
-let i = 0;
-setInterval(() => {
-  scrollImgs[i].classList.remove("active");
-  scrollNums[i].classList.remove("active");
-  scrollTxts[i].classList.remove("active");
-
-  i++;
-  if(i >= scrollImgs.length) i = 0;
-
-  scrollImgs[i].classList.add("active");
-  scrollNums[i].classList.add("active");
-  scrollTxts[i].classList.add("active");
-}, 5000);
-=======
 //  BUTTON ATTRACT TO MOUSE 
 
 let magneticButtons = document.querySelectorAll(".magneticButton");
@@ -92,4 +68,3 @@ signUpBtns.forEach((btn) => {
     active = !active;
   });
 });
->>>>>>> Stashed changes
