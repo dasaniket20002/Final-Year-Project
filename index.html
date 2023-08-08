@@ -20,7 +20,7 @@
                 Sign&nbsp;Up
                 <span style="background-color: #F28500;"></span>
             </div>
-            <i class="fa-solid fa-xmark"></i>
+            <i class="fa-solid fa-xmark buttonShadow"></i>
         </a>
     </nav>
 
@@ -107,6 +107,54 @@
             </div>
         </div>
     </footer>
+
+    <div class="accountsPage">
+        <div class="accountsBG buttonShadow left"></div>
+        <div class="accounts createAccount active">
+            <h1>CREATE<br>ACCOUNT</h1>
+            <form id="form_createAcc" action="" method="post">
+                <div class="inpField">
+                    <input type="text" id="name_createAcc" placeholder=" ">
+                    <label for="name_createAcc">Name</label>
+                </div>
+                <div class="inpField">
+                    <input type="email" id="email_createAcc" placeholder=" ">
+                    <label for="email_createAcc">Email</label>
+                </div>
+                <div class="inpField">
+                    <input type="password" id="password_createAcc" placeholder=" ">
+                    <label for="password_createAcc">Password</label>
+                </div>
+            </form>
+            <p>Don't have account yet? Please sign up with the details to connect with us.</p>
+            <div class="inpField inpBtn inpBtn_input">
+                <input class="magneticButton buttonShadow" form="form_createAcc" type="submit" value="Sign Up" id="signup">
+            </div>
+            <div class="inpField inpBtn inpBtn_div">
+                <div class="magneticButton buttonShadow">Sign Up</div>
+            </div>
+        </div>
+        <div class="accounts login">
+            <h1>WELCOME<br>BACK</h1>
+            <form id="login_form" action="" method="post">
+                <div class="inpField">
+                    <input type="email" id="email_login" placeholder=" ">
+                    <label for="email_login">Email</label>
+                </div>
+                <div class="inpField">
+                    <input type="password" id="password_login" placeholder=" ">
+                    <label for="password_login">Password</label>
+                </div>
+            </form>
+            <p>If you already have account please login to keep connected with us</p>
+            <div class="inpField inpBtn inpBtn_input">
+                <input class="magneticButton buttonShadow" form="login_form" type="submit" value="Sign In" id="signin">
+            </div>
+            <div class="inpField inpBtn inpBtn_div">
+                <div class="magneticButton buttonShadow">Sign In</div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/index.js"></script>
 </body>

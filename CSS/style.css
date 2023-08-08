@@ -46,6 +46,7 @@ body nav {
   z-index: 10;
 }
 body nav a {
+  position: relative;
   font-family: Montserrat;
   font-size: 1rem;
   font-style: normal;
@@ -61,14 +62,33 @@ body nav a div {
   padding: 1rem 1.5rem;
   border-radius: 10rem;
   color: #F28500;
+  transition: opacity 150ms ease-in-out;
 }
-body nav a div + i {
+body nav a i {
+  position: absolute;
+  opacity: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FDFDFF;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10rem;
+  font-size: 1.5rem;
+  color: #F28500;
+  transition: opacity 150ms ease-in-out;
+}
+body nav a i::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+}
+body nav a.enableClose div {
   opacity: 0;
 }
-body nav a div.enableClose {
-  opacity: 0;
-}
-body nav a div.enableClose + i {
+body nav a.enableClose i {
   opacity: 1;
 }
 body .page1 {
@@ -277,7 +297,7 @@ body footer .footerContainer .footerLeft img {
   width: 10rem;
 }
 body footer .footerContainer .footerLeft h1 {
-  font-family: Futura Hv BT;
+  font-family: Futura;
   font-size: 2rem;
   font-style: normal;
   font-weight: 400;
@@ -349,6 +369,197 @@ body footer .footerBottom .links {
 body footer .footerBottom .links a i {
   font-size: 1.25rem;
   color: #363438;
+}
+body .accountsPage {
+  position: absolute;
+  right: 0;
+  top: calc((100vh - 5rem) / 2 + 5rem);
+  transform: translateY(-50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 50%;
+  padding: 0 5rem;
+}
+body .accountsPage .accountsBG {
+  position: absolute;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid #FDFDFF;
+  transition: left 500ms ease, right 500ms ease;
+  z-index: -2;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+body .accountsPage .accountsBG.left {
+  left: 18%;
+  right: 52%;
+}
+body .accountsPage .accountsBG.right {
+  left: 52%;
+  right: 18%;
+}
+body .accountsPage .accounts {
+  grid-row: 1/2;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  align-items: center;
+  width: 75%;
+  height: 80vh;
+  padding: 2rem;
+}
+body .accountsPage .accounts h1 {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  font-family: Monument Extended;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 4.8px;
+  color: #131115;
+  text-align: center;
+}
+body .accountsPage .accounts form {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 2rem 3rem;
+  pointer-events: none;
+  transition: -webkit-clip-path 500ms ease;
+  transition: clip-path 500ms ease;
+  transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
+}
+body .accountsPage .accounts form .inpField {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 2rem;
+}
+body .accountsPage .accounts form .inpField input {
+  grid-row: 1;
+  grid-column: 1;
+  border: none;
+  border-bottom: 1px solid #363438;
+  background-color: transparent;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+body .accountsPage .accounts form .inpField input:focus {
+  outline: none;
+  border-bottom: 1px solid #131115;
+}
+body .accountsPage .accounts form .inpField input:not(:-moz-placeholder-shown) + label {
+  transform: translateY(-60%);
+  font-size: 1rem;
+  color: #363438;
+}
+body .accountsPage .accounts form .inpField input:focus + label, body .accountsPage .accounts form .inpField input:not(:placeholder-shown) + label {
+  transform: translateY(-60%);
+  font-size: 1rem;
+  color: #363438;
+}
+body .accountsPage .accounts form .inpField label {
+  grid-row: 1;
+  grid-column: 1;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #131115;
+  cursor: text;
+  pointer-events: none;
+  transition: transform 250ms ease, font-size 150ms ease;
+}
+body .accountsPage .accounts p {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  padding: 0 3rem;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  z-index: -1;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  transition: -webkit-clip-path 500ms ease;
+  transition: clip-path 500ms ease;
+  transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
+}
+body .accountsPage .accounts .inpBtn {
+  grid-row: 3/4;
+  grid-column: 1/2;
+  height: 3.25rem;
+  padding: 0 5rem;
+}
+body .accountsPage .accounts .inpBtn input, body .accountsPage .accounts .inpBtn div {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: #FDFDFF;
+  border-radius: 10rem;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F28500;
+}
+body .accountsPage .accounts .inpBtn_input {
+  opacity: 0;
+  z-index: -1;
+}
+body .accountsPage .accounts .inpBtn_div {
+  opacity: 1;
+  z-index: 0;
+}
+body .accountsPage .accounts.active form {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  pointer-events: all;
+}
+body .accountsPage .accounts.active .inpBtn_div {
+  opacity: 0;
+  z-index: -1;
+}
+body .accountsPage .accounts.active .inpBtn_input {
+  opacity: 1;
+  z-index: 0;
+}
+body .accountsPage .createAccount {
+  justify-self: end;
+}
+body .accountsPage .createAccount form {
+  -webkit-clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+          clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+}
+body .accountsPage .createAccount.active p {
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+body .accountsPage .login {
+  justify-self: start;
+}
+body .accountsPage .login form {
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+body .accountsPage .login.active p {
+  -webkit-clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+          clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
 }
 
 .backgroundGradient {
