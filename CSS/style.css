@@ -428,9 +428,9 @@ body .accountsPage .accounts form {
   gap: 5rem;
   padding: 2rem 3rem;
   pointer-events: none;
-  transition: -webkit-clip-path 500ms ease;
-  transition: clip-path 500ms ease;
-  transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
+  transition: -webkit-clip-path 550ms ease;
+  transition: clip-path 550ms ease;
+  transition: clip-path 550ms ease, -webkit-clip-path 550ms ease;
 }
 body .accountsPage .accounts form .inpField {
   display: grid;
@@ -491,9 +491,9 @@ body .accountsPage .accounts p {
   z-index: -1;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  transition: -webkit-clip-path 500ms ease;
-  transition: clip-path 500ms ease;
-  transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
+  transition: -webkit-clip-path 550ms ease;
+  transition: clip-path 550ms ease;
+  transition: clip-path 550ms ease, -webkit-clip-path 550ms ease;
 }
 body .accountsPage .accounts .inpBtn {
   grid-row: 3/4;
