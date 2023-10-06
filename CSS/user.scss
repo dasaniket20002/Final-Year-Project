@@ -1,0 +1,516 @@
+$col_accent: #F28500;
+$col_primary: #FDFDFF;
+$col_text: #131115;
+$col_text_dim: #363438;
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+
+    //overflow-x: hidden;
+    transition: transform 150ms ease;
+
+    nav {
+        position: fixed;
+
+        height: 5rem;
+        width: 100%;
+        //padding: 0 5rem;
+
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: 1fr;
+
+        align-items: center;
+        justify-items: center;
+
+        outline: 1px solid $col_primary;
+        transition: transform 150ms ease;
+
+        z-index: 10;
+
+        a {
+            position: relative;
+
+            font-family: Montserrat;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+
+            color: $col_text;
+
+            img {
+                background-size: contain;
+            }
+        }
+
+        form {
+            position: relative;
+            width: 45%;
+            height: 50%;
+            border-radius: 0.7rem;
+
+            background: $col_accent;
+
+            font-family: Montserrat;
+            font-size: 0.4rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+
+            transition: box-shadow 0.3s cubic-bezier(0, 0, 0.43, 1.49);
+
+            &:has(input:focus)  {
+                box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.5);
+            }
+
+            input, button {
+                height: 100%;
+
+                border: 0;
+                color: $col_text;
+            }
+
+            input[type="search"] {
+                outline: 0; // <-- should probably remove this for better accessibility, adding for demo aesthetics for now.
+                width: 100%;
+                background: $col_primary;
+                padding: 0 1.6rem;
+                border-radius: 0.7rem;
+                appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
+                transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);
+                transition-property: width, border-radius;
+                z-index: 1;
+                position: relative;
+
+                &:not(:placeholder-shown) {
+                    border-radius: 0.7rem 0 0 0.7rem;
+                    width: calc(100% - 4rem);
+                    + button {
+                      display: block;
+                    }
+                }
+            }
+
+            button {
+                display: none; // prevent being able to tab to it
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 4rem;
+                font-weight: bold;
+                color: $col_text;
+                border-radius: 0 0.7rem 0.7rem 0;
+                background: $col_accent;
+            }
+
+            label {
+                position: absolute;
+                clip: rect(1px, 1px, 1px, 1px);
+                padding: 0;
+                border: 0;
+                height: 1px;
+                width: 1px;
+                overflow: hidden;
+            }
+        }
+
+        div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 1.6rem;
+
+            min-height: 100%;
+            width: auto;
+            
+            a {
+                &.watchTogether {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    gap: 0.5rem;
+
+                    font-size: 0.7rem;
+                    color: $col_accent;
+                    i {
+                        font-size: 1.1rem;
+                    }
+                }
+
+                &.accountDetails {
+                    top: 25%;
+                    left: 25%;
+
+                    aspect-ratio: 1;
+                    width: auto;
+                    height: 50%;
+
+                    background-color: $col_primary;
+                    border-radius: 50%;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+
+    .page1 {
+        position: relative;
+
+        padding: 7.5rem 5rem 0 5rem;
+
+        font-family: Monument Extended;
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: bold;
+        line-height: normal;
+        letter-spacing: 0.3rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .header {
+            display: flex;
+            text-align: end;
+            gap: 1rem;
+
+            h1, p {
+                align-self: center;
+            }
+            p {
+                opacity: 0.7;
+            }
+        }
+        .pageNumDisplay {
+            display: flex;
+            text-align: end;
+            gap: 1rem;
+
+            opacity: 0.7;
+
+            font-size: 0.55rem;
+        }
+    }
+
+    .page2 {
+        width: 100%;
+        position: relative;
+        padding: 2rem 5rem 0 5rem;
+
+        font-family: Montserrat;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+
+        .videoBrowser {
+            list-style: none;
+
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 1.5rem;
+
+            .videoContainer {
+                position: relative;
+                width: auto;
+                height: 15rem;
+                aspect-ratio: 4/3;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+
+                    margin: 0.1rem;
+                    background-color: $col_primary;
+                    border-radius: 0.5rem;
+
+                    overflow: hidden;
+
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        margin: 0;
+
+                        div.scrollGradientOnHover {
+                            top: 0%;
+                            opacity: 1;
+                        }
+
+                        div.videoTitle {
+                            max-height: 100%;
+                            white-space: wrap;
+                        }
+                    }
+
+                    div {
+                        color: $col_text;
+
+                        &.scrollGradientOnHover {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.3));
+
+                            top: 100%;
+                            opacity: 0;
+
+                            transition: all 0.3s ease-in-out;
+                        }
+
+                        &.videoThumbnail {
+                            width: 100%;
+                            height: 100%;
+                            img {
+                                background-size: contain;
+                            }
+                        }
+                        &.videoTitle {
+                            position: absolute;
+                            left: 0;
+                            bottom: 2rem;
+                            font-size: 1rem;
+                            padding: 1rem;
+
+                            max-height: 3rem;
+
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+
+                            width: 100%;
+                            transition: all 0.3s ease;
+                        }
+                        &.streamer {
+                            position: absolute;
+                            left: 0;
+                            bottom: 0.1rem;
+                            font-size: 0.75rem;
+                            padding: 1rem;
+                            opacity: 0.6;
+                        }
+                        &.time {
+                            position: absolute;
+                            right: 0;
+                            bottom: 0.1rem;
+                            font-size: 0.75rem;
+                            padding: 1rem;
+                            opacity: 0.6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .page3 {
+        width: 100%;
+        padding: 2rem 5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10rem;
+
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        font-size: 1rem;
+
+        .pageScroller {
+            background-color: $col_accent;
+            height: 2.5rem;
+            width: auto;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease-in-out;
+        }
+
+        form {
+            width: 2.5rem;
+            height: auto;
+            aspect-ratio: 1;
+
+            border-radius: 0.7rem;
+
+            input[type="search"] {
+                width: 100%;
+                height: 100%;
+
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                font-size: 1rem;
+
+                text-align: center;
+
+                outline: 0; // <-- should probably remove this for better accessibility, adding for demo aesthetics for now.
+                
+                background: $col_primary;
+                
+                border-radius: 0.7rem;
+                appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
+                
+                z-index: 1;
+                position: relative;
+
+                &::-webkit-search-decoration,
+                &::-webkit-search-cancel-button
+                { 
+                    display: none; 
+                }
+            }
+            label {
+                position: absolute;
+                clip: rect(1px, 1px, 1px, 1px);
+                padding: 0;
+                border: 0;
+                height: 1px;
+                width: 1px;
+                overflow: hidden;
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        padding: 1rem 5rem;
+        .footerContainer {
+            position: relative;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            padding: 3rem 0;
+
+            border-top: 1px solid $col_text;
+            border-bottom: 1px solid $col_text;
+
+            .footerLeft {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 4rem;
+
+                img {
+                    width: 10rem;
+                }
+                h1 {
+                    font-family: Futura;
+                    font-size: 2rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    letter-spacing: 0.225rem;
+                }
+            }
+            .footerRight {
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+
+                    li {
+                        list-style: none;
+
+                        a {
+                            font-family: Montserrat;
+                            font-size: 0.8rem;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+
+                            color: $col_text_dim;
+
+                            &:hover {
+                                color: $col_text;
+                            }
+                        }
+                    }
+                }
+
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 7rem;
+
+                padding: 2rem;
+            }
+
+            .backToTopBtn {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+
+                width: 5rem;
+                height: 5rem;
+
+                background-color: $col_primary;
+                margin: 2rem;
+
+                border-radius: 50%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                cursor: pointer;
+
+                img {
+                    width: 2rem;
+                }
+            }
+        }
+        .footerBottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+
+            .copyrightInfo {
+                font-family: OpenSans;
+                font-size: 0.75rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                
+                text-transform: uppercase;
+
+                color: $col_text_dim;
+            }
+            .links {
+                display: flex;
+                gap: 3rem;
+
+                a i {
+                    font-size: 1.25rem;
+                    color: $col_text_dim;
+                }
+            }
+        }
+    }
+}

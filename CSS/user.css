@@ -1,0 +1,415 @@
+body {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  transition: transform 150ms ease;
+}
+body nav {
+  position: fixed;
+  height: 5rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  outline: 1px solid #FDFDFF;
+  transition: transform 150ms ease;
+  z-index: 10;
+}
+body nav a {
+  position: relative;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #131115;
+}
+body nav a img {
+  background-size: contain;
+}
+body nav form {
+  position: relative;
+  width: 45%;
+  height: 50%;
+  border-radius: 0.7rem;
+  background: #F28500;
+  font-family: Montserrat;
+  font-size: 0.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: box-shadow 0.3s cubic-bezier(0, 0, 0.43, 1.49);
+}
+body nav form:has(input:focus) {
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.5);
+}
+body nav form input, body nav form button {
+  height: 100%;
+  border: 0;
+  color: #131115;
+}
+body nav form input[type=search] {
+  outline: 0;
+  width: 100%;
+  background: #FDFDFF;
+  padding: 0 1.6rem;
+  border-radius: 0.7rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+body nav form input[type=search]:not(:-moz-placeholder-shown) {
+  border-radius: 0.7rem 0 0 0.7rem;
+  width: calc(100% - 4rem);
+}
+body nav form input[type=search]:not(:placeholder-shown) {
+  border-radius: 0.7rem 0 0 0.7rem;
+  width: calc(100% - 4rem);
+}
+body nav form input[type=search]:not(:-moz-placeholder-shown) + button {
+  display: block;
+}
+body nav form input[type=search]:not(:placeholder-shown) + button {
+  display: block;
+}
+body nav form button {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4rem;
+  font-weight: bold;
+  color: #131115;
+  border-radius: 0 0.7rem 0.7rem 0;
+  background: #F28500;
+}
+body nav form label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+body nav div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1.6rem;
+  min-height: 100%;
+  width: auto;
+}
+body nav div a.watchTogether {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  color: #F28500;
+}
+body nav div a.watchTogether i {
+  font-size: 1.1rem;
+}
+body nav div a.accountDetails {
+  top: 25%;
+  left: 25%;
+  aspect-ratio: 1;
+  width: auto;
+  height: 50%;
+  background-color: #FDFDFF;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+body .page1 {
+  position: relative;
+  padding: 7.5rem 5rem 0 5rem;
+  font-family: Monument Extended;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+body .page1 .header {
+  display: flex;
+  text-align: end;
+  gap: 1rem;
+}
+body .page1 .header h1, body .page1 .header p {
+  align-self: center;
+}
+body .page1 .header p {
+  opacity: 0.7;
+}
+body .page1 .pageNumDisplay {
+  display: flex;
+  text-align: end;
+  gap: 1rem;
+  opacity: 0.7;
+  font-size: 0.55rem;
+}
+body .page2 {
+  width: 100%;
+  position: relative;
+  padding: 2rem 5rem 0 5rem;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+body .page2 .videoBrowser {
+  list-style: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+body .page2 .videoBrowser .videoContainer {
+  position: relative;
+  width: auto;
+  height: 15rem;
+  aspect-ratio: 4/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .page2 .videoBrowser .videoContainer a {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0.1rem;
+  background-color: #FDFDFF;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+body .page2 .videoBrowser .videoContainer a:hover {
+  margin: 0;
+}
+body .page2 .videoBrowser .videoContainer a:hover div.scrollGradientOnHover {
+  top: 0%;
+  opacity: 1;
+}
+body .page2 .videoBrowser .videoContainer a:hover div.videoTitle {
+  max-height: 100%;
+  white-space: wrap;
+}
+body .page2 .videoBrowser .videoContainer a div {
+  color: #131115;
+}
+body .page2 .videoBrowser .videoContainer a div.scrollGradientOnHover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.3));
+  top: 100%;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+body .page2 .videoBrowser .videoContainer a div.videoThumbnail {
+  width: 100%;
+  height: 100%;
+}
+body .page2 .videoBrowser .videoContainer a div.videoThumbnail img {
+  background-size: contain;
+}
+body .page2 .videoBrowser .videoContainer a div.videoTitle {
+  position: absolute;
+  left: 0;
+  bottom: 2rem;
+  font-size: 1rem;
+  padding: 1rem;
+  max-height: 3rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+body .page2 .videoBrowser .videoContainer a div.streamer {
+  position: absolute;
+  left: 0;
+  bottom: 0.1rem;
+  font-size: 0.75rem;
+  padding: 1rem;
+  opacity: 0.6;
+}
+body .page2 .videoBrowser .videoContainer a div.time {
+  position: absolute;
+  right: 0;
+  bottom: 0.1rem;
+  font-size: 0.75rem;
+  padding: 1rem;
+  opacity: 0.6;
+}
+body .page3 {
+  width: 100%;
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 1rem;
+}
+body .page3 .pageScroller {
+  background-color: #F28500;
+  height: 2.5rem;
+  width: auto;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+body .page3 form {
+  width: 2.5rem;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 0.7rem;
+}
+body .page3 form input[type=search] {
+  width: 100%;
+  height: 100%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 1rem;
+  text-align: center;
+  outline: 0;
+  background: #FDFDFF;
+  border-radius: 0.7rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  z-index: 1;
+  position: relative;
+}
+body .page3 form input[type=search]::-webkit-search-decoration, body .page3 form input[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+body .page3 form label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+body footer {
+  width: 100%;
+  padding: 1rem 5rem;
+}
+body footer .footerContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3rem 0;
+  border-top: 1px solid #131115;
+  border-bottom: 1px solid #131115;
+}
+body footer .footerContainer .footerLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+body footer .footerContainer .footerLeft img {
+  width: 10rem;
+}
+body footer .footerContainer .footerLeft h1 {
+  font-family: Futura;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.225rem;
+}
+body footer .footerContainer .footerRight {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7rem;
+  padding: 2rem;
+}
+body footer .footerContainer .footerRight ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+body footer .footerContainer .footerRight ul li {
+  list-style: none;
+}
+body footer .footerContainer .footerRight ul li a {
+  font-family: Montserrat;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #363438;
+}
+body footer .footerContainer .footerRight ul li a:hover {
+  color: #131115;
+}
+body footer .footerContainer .backToTopBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 5rem;
+  height: 5rem;
+  background-color: #FDFDFF;
+  margin: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+body footer .footerContainer .backToTopBtn img {
+  width: 2rem;
+}
+body footer .footerBottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+body footer .footerBottom .copyrightInfo {
+  font-family: OpenSans;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #363438;
+}
+body footer .footerBottom .links {
+  display: flex;
+  gap: 3rem;
+}
+body footer .footerBottom .links a i {
+  font-size: 1.25rem;
+  color: #363438;
+}/*# sourceMappingURL=user.css.map */
